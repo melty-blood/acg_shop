@@ -11,9 +11,12 @@
 |
 */
 
+use Illuminate\Support\Facades\Route;
+
+// ->middleware('verified')邮箱验证中间件
 Route::get('/', 'PagesController@root')->name('root');
 
 
-Auth::routes();
+Auth::routes(['verify' => true]);
 
 // rm Route::get('/home', 'HomeController@index')->name('home');
